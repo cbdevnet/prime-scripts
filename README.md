@@ -7,6 +7,9 @@ the discrete GPU and I did not want to have that enabled all the time for batter
 This collection of scripts and configuration allows me to start the GPU when I need it,
 including the external connectors, but still have it disabled on boot saving battery.
 
+Applications can be run on the discrete GPU using [PRIME](https://wiki.archlinux.org/index.php/PRIME)
+functionality.
+
 Though it is pretty hacky, it should work alright with minor hickups.
 
 ## What does what
@@ -79,6 +82,8 @@ the two cards with [this guide](https://wiki.archlinux.org/index.php/PRIME).
 
 The current discrete card power status can be seen in `/proc/acpi/bbswitch`.
 Writing `OFF` to that file turns off the power to the card.
+
+To see which card is being used to render, run `glxinfo | grep -i opengl` or `glxgears -info`.
 
 ## Problems
 
